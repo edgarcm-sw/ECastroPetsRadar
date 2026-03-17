@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import nodemailer from 'nodemailer';
 import { envs } from 'src/config/envs';
+import { EmailOptions } from 'src/core/interfaces/mail-options.interface';
 
 @Injectable()
 export class EmailService {
@@ -14,12 +15,12 @@ export class EmailService {
         }
     });
 
-    async sendEmail() : Promise<Boolean> {
+    async sendEmail(options: EmailOptions) : Promise<Boolean> {
         try {
             await this.transpoter.sendMail({
-                to: "castromendezedgarleonel@gmail.com",
-                subject: "Correo de prueba",
-                html: "<h1>Esto es un correo de prueba</h1>"
+                to: options.to,
+                subject: options.subject,
+                html: options.html
             })
             return true;
         } catch (error) {
