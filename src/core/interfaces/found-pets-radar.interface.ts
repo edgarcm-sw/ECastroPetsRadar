@@ -1,19 +1,18 @@
 import { PetsSize } from "../enums/pets-size.enum";
 import { PetSpecies } from "../enums/pets-species.enum";
 
-export interface LostPetsRadarCDto {
-    name: string;
+export interface FoundPetsRadarCDto {
     species: PetSpecies;
-    breed: string;
+    breed: string | null;
     color: string;
     size: PetsSize;
     description: string;
     photo_url: string | null;
-    owner_name: string;
-    owner_email: string;
-    owner_phone: string;
+    finder_name: string;
+    finder_email: string;
+    finder_phone: string;
     lat: number;
     lon: number;
     address: string;
-    lost_date: Date;
+    found_date: Date;
 }

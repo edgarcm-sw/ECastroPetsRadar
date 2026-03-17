@@ -2,6 +2,7 @@ import { envs } from "src/config/envs";
 import { LostPetsRadar } from "./entities/lost-pets-radar.entity";
 import { DataSourceOptions } from "typeorm";
 import { DataSource } from "typeorm";
+import { FoundPetsRadar } from "./entities/found-pets-radar.entity";
 
 export const dataSourceOptions : DataSourceOptions = {
       host: envs.DB_HOST,
@@ -10,7 +11,7 @@ export const dataSourceOptions : DataSourceOptions = {
       database: envs.DB_NAME,
       username: envs.DB_USER,
       password: envs.DB_PASSWORD,
-      entities: [LostPetsRadar],
+      entities: [LostPetsRadar, FoundPetsRadar],
       synchronize: false,
       migrations: ["dist/core/db/migrations/*"]
     };
