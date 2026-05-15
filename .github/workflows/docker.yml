@@ -25,4 +25,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/dgarcm-sw/pets-radar-api:latest
+          tags: ghcr.io/edgarcm-sw/ecastropetsradar:latest
