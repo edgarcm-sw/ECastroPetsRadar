@@ -26,3 +26,5 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/edgarcm-sw/ecastropetsradar:latest
+
+          # Prueba del workflow
